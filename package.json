@@ -1,0 +1,21 @@
+{
+  "name": "oauth",
+  "version": "1.0.0",
+  "description": "oauth implementation for educational purposes",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rezaa91/oauth"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ali Issaee",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
