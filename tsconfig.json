@@ -6,6 +6,9 @@
 
     "strict": true,
     "esModuleInterop": true,
-    "skipLibCheck": true
-  }
+    "skipLibCheck": true,
+    "outDir": "dist"
+  },
+  "include": ["authorization-server/src", "client/src", "protected-resource/src"],
+  "exclude": ["node_modules"]
 }
