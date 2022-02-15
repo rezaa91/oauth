@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Client - resource</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        padding: 20px;
+      }
+
+      h1 {
+        margin-bottom: 30px;
+      }
+
+      span {
+        font-weight: 900;
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Below is the protected resource gained using Oauth</h1>
+    <span><%- resource.data %></span>
+  </body>
+</html>

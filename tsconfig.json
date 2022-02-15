@@ -7,8 +7,9 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "resolveJsonModule": true
   },
-  "include": ["authorization-server/src", "client/src", "protected-resource/src"],
+  "include": ["src"],
   "exclude": ["node_modules"]
 }

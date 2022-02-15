@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Authorization Server</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      body {
+        padding: 20px;
+      }
+
+      h1 {
+        font-family: monospace;
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        color: grey;
+      }
+
+      ul {
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Authorization Server</h1>
+
+    <h2>Clients</h2>
+    <% clients.forEach(function(client) { %>
+    <ul>
+      <li><b>client_id:</b> <%- client.client_id %></li>
+      <li><b>client_secret:</b> <%- client.client_secret %></li>
+      <li><b>scope:</b> <%- client.scope %></li>
+      <li><b>redirect_uri:</b> <%- client.redirect_uri %></li>
+    </ul>
+    <% }) %>
+  </body>
+</html>

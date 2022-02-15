@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <title>Authorization Server</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      body {
+        padding: 20px;
+        font-family: sans-serif;
+      }
+
+      .container {
+        padding: 20px;
+        background: wheat;
+        box-shadow: 3px 1px 2px 1px gray;
+      }
+
+      h2 {
+        color: blueviolet;
+        margin-bottom: 30px;
+      }
+
+      form {
+        padding: 20px 0;
+      }
+
+      input[type="submit"] {
+        margin-top: 20px;
+        padding: 10px;
+        background: white;
+      }
+
+      input[name="approve"] {
+        background: lime;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>Approve client</h2>
+
+      <p><%- client.client_name %> is trying to gain the following access:</p>
+
+      <form action="/approve" method="POST">
+        <input type="hidden" name="reqId" value="<%- reqId %>" />
+        <ul>
+        <% scopes.forEach(function(scope) { %>
+          <li><input type="checkbox" checked="checked" name="scope_<%- scope %>" /><%- scope %></li>
+        <% }) %>
+        </ul>
+        <input type="submit" name="approve" value="Approve" />
+        <input type="submit" name="deny" value="Deny" />
+      </form>
+    </div>
+  </body>
+</html>
