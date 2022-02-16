@@ -37,7 +37,7 @@ const db: Db = {
       "client_name": "My Application",
       "client_id": "oauth-client-id-1",
       "client_secret": "oauth-client-id-1-secret",
-      "redirect_uri": "http://localhost:5000/callback",
+      "redirect_uri": "http://localhost:5000/auth/callback",
       "scope": "read"
     }
   ],
