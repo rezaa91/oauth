@@ -12,5 +12,5 @@ export enum Auth {
 }
 
 export enum Resource {
-  protected = 'http://localhost:5002/resource'
+  protected = 'http://localhost:5002/books'
 }

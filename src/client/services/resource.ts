@@ -1,7 +1,12 @@
 import fetch from 'node-fetch';
 import {Resource} from '../config';
 
-export async function getBooks(accessToken: string): Promise<any> {
+type Book = {
+  title: string;
+  author: string;
+}
+
+export async function getBooks(accessToken: string): Promise<{data: Book}> {
   console.log('retrieving books from API');
   const headers = {
     'Authorization': `bearer ${accessToken}`,

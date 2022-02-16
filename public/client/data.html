@@ -16,15 +16,19 @@
         margin-bottom: 30px;
       }
 
-      span {
+      .header {
         font-weight: 900;
-        color: red;
       }
     </style>
   </head>
 
   <body>
-    <h1>Below is the protected resource gained using Oauth</h1>
-    <span><%- resource.data %></span>
+    <h1>Books</h1>
+    <% books.data.forEach(book => { %>
+      <div>
+        <span class="header">Title: </span><span><%- book.title %></span>
+        <span class="header">Author: </span><span><%- book.author %></span>
+      </div>
+    <% }) %>
   </body>
 </html>

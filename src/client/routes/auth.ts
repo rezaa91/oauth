@@ -33,8 +33,9 @@ router.get('/callback', async (req, res) => {
   try {
     const authCode = req.query.code as string;
     const token = await getToken(authCode);
-    res.cookie('access_token', token.access_token, {maxAge: token.expiry ?? 86400, httpOnly: true});
-    res.cookie('refresh_token', token.refresh_token, {maxAge: token.expiry ?? 86400 * 30, httpOnly: true});
+    console.log(`received access token ${token.access_token}`);
+    res.cookie('access_token', token.access_token, {maxAge: 86400, httpOnly: true});
+    res.cookie('refresh_token', token.refresh_token, {maxAge: 86400 * 30, httpOnly: true});
     res.redirect('/books');
   } catch (error) {
     console.log(error);
