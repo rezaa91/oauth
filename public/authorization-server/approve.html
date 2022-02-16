@@ -47,7 +47,7 @@
 
       <p><%- client.client_name %> is trying to gain the following access:</p>
 
-      <form action="/approve" method="POST">
+      <form action="/auth/approve" method="POST">
         <input type="hidden" name="reqId" value="<%- reqId %>" />
         <ul>
         <% scopes.forEach(function(scope) { %>

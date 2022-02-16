@@ -6,9 +6,8 @@ export enum Client {
 }
 
 export enum Auth {
-  authorizeURL = 'http://localhost:5001/authorize',
-  tokenURL = 'http://localhost:5001/token',
-  revokeURL = 'http://localhost:5001/revoke'
+  authorizeURL = 'http://localhost:5001/auth',
+  tokenURL = 'http://localhost:5001/auth/token'
 }
 
 export enum Resource {

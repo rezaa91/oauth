@@ -4,5 +4,5 @@ export enum Resource {
 }
 
 export enum Auth {
-  introspectURL = 'http://localhost:5001/introspect'
+  introspectURL = 'http://localhost:5001/auth/introspect'
 }
