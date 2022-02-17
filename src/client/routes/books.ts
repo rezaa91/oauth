@@ -7,7 +7,7 @@ const router = express.Router();
 router.get('/', isAuthorised, async(req, res) => {
   try {
     const books = await getBooks(req.cookies.access_token);
-    res.render('data', {books});
+    res.render('books', {books});
     return;
   } catch (error) {
     console.log(error);

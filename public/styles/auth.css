@@ -1,26 +1,82 @@
-.container {
-  padding: 20px;
-  background: wheat;
-  box-shadow: 3px 1px 2px 1px gray;
+body {
+  background: #292e2a;
 }
 
-h2 {
-  color: blueviolet;
-  margin-bottom: 30px;
+nav {
+  border-bottom: 2px solid black;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.container {
+  background: #4d4f4e;
+  padding: 20px;
+  font-family: serif;
+  box-shadow: 3px 1px 2px 1px black;
+}
+
+.header {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.main-title {
+  font-family: sans-serif;
+  color: #1c8cfc;
+}
+
+.access-info {
+  font-size: 22px;
+}
+
+.client-name {
+  font-style: italic;
+  font-weight: 600;
 }
 
 form {
   padding: 20px 0;
+  text-align: center;
 }
 
-input[type="submit"] {
+.scopes {
+  padding: 50px 10px;
+}
+
+.scopes>h3 {
+  font-weight: 600;
+  font-family: sans-serif;
+  margin-bottom: 10px;
+}
+
+.scope {
+  font-size: 22px;
+  margin-left: 10px;
+}
+
+.btn-group {
   margin-top: 20px;
+}
+
+.btn {
   padding: 10px;
   background: white;
+  cursor: pointer;
+  box-shadow: 0 0 5px black;
+}
+
+.btn:hover {
+  box-shadow: 0 0 0;
+}
+
+.btn:active {
+  box-shadow: inset 2px 2px 0 black;
+  opacity: 0.5;
 }
 
 input[name="approve"] {
-  background: lime;
+  background: #3ddb68;
 }
 
 h1 {
@@ -29,10 +85,18 @@ h1 {
   margin-bottom: 20px;
 }
 
-h2 {
-  color: grey;
-}
-
 ul {
   width: 100%;
+}
+
+.clients {
+  display: flex;
+  font-size: 18px;
+  color: #c7c7c7;
+}
+
+.client-label {
+  font-weight: 900;
+  display: inline-block;
+  width: 150px;
 }

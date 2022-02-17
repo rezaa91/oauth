@@ -15,7 +15,8 @@ router.get('/', getAccessToken, (req, res) => {
         author: 'GRRM'
       },
       {
-        title: 'Oauth in action'
+        title: 'Oauth in action',
+        author: 'Justin Richer'
       }
     ]
   })

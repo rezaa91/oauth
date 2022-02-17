@@ -34,7 +34,7 @@ type Db = {
 const db: Db = {
   clients: [
     {
-      "client_name": "My Application",
+      "client_name": "Book Store",
       "client_id": "oauth-client-id-1",
       "client_secret": "oauth-client-id-1-secret",
       "redirect_uri": "http://localhost:5000/auth/callback",

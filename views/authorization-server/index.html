@@ -6,16 +6,22 @@
   </head>
 
   <body>
-    <h1>Authorization Server</h1>
-
-    <h2>Clients</h2>
-    <% clients.forEach(function(client) { %>
-    <ul>
-      <li><b>client_id:</b> <%- client.client_id %></li>
-      <li><b>client_secret:</b> <%- client.client_secret %></li>
-      <li><b>scope:</b> <%- client.scope %></li>
-      <li><b>redirect_uri:</b> <%- client.redirect_uri %></li>
-    </ul>
-    <% }) %>
+    <nav>
+      <h1>MY BOOK API</h1>
+    </nav>
+    <div class="container">
+      <h1>Clients</h1>
+      <div class="clients">
+        <% clients.forEach(function(client) { %>
+        <ul>
+          <li><span class="client-label">client_name:</span> <%- client.client_name %></li>
+          <li><span class="client-label">client_id:</span> <%- client.client_id %></li>
+          <li><span class="client-label">client_secret:</span> <%- client.client_secret %></li>
+          <li><span class="client-label">scope:</span> <%- client.scope %></li>
+          <li><span class="client-label">redirect_uri:</span> <%- client.redirect_uri %></li>
+        </ul>
+        <% }) %>
+      </div>
+    </div>
   </body>
 </html>

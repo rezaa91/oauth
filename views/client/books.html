@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Client</title>
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/client.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1 class="main-title">Book Collection</h1>
+        <h2 class="tag-line">Organise your books</h2>
+      </div>
+      <div class="books">
+        <% books.data.forEach(book => { %>
+          <div class="book">
+            <div class="title-container">
+              <span class="label">Title:</span><span> <%- book.title %></span>
+            </div>
+            <div class="author-container">
+              <span class="label">Author:</span><span> <%- book.author %></span>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+  </body>
+</html>

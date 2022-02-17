@@ -6,20 +6,32 @@
   </head>
 
   <body>
+    <nav>
+      <h1>MY BOOK API</h1>
+    </nav>
     <div class="container">
-      <h2>Approve client</h2>
-
-      <p><%- client.client_name %> is trying to gain the following access:</p>
+      <div class="header">
+        <h1 class="main-title">Approve client</h1>
+        <p class="access-info"><span class="client-name"><%- client.client_name %></span> is trying to gain the following access:</p>
+      </div>
 
       <form action="/auth/approve" method="POST">
         <input type="hidden" name="reqId" value="<%- reqId %>" />
-        <ul>
-        <% scopes.forEach(function(scope) { %>
-          <li><input type="checkbox" checked="checked" name="scope_<%- scope %>" /><%- scope %></li>
-        <% }) %>
-        </ul>
-        <input type="submit" name="approve" value="Approve" />
-        <input type="submit" name="deny" value="Deny" />
+        <div class="scopes">
+          <h3>Requested Scopes:</h3>
+          <ul>
+          <% scopes.forEach(function(scope) { %>
+            <li>
+              <input type="checkbox" checked="checked" name="scope_<%- scope %>" />
+              <span class="scope"><%- scope %></span>
+            </li>
+          <% }) %>
+          </ul>
+        </div>
+        <div class="btn-group">
+          <input class="btn" type="submit" name="approve" value="Approve" />
+          <input class="btn" type="submit" name="deny" value="Deny" />
+        </div>
       </form>
     </div>
   </body>

@@ -1,8 +1,17 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   padding: 20px
+}
+
+a {
+  display: inline-block;
+}
+
+ul {
+  list-style: none;
 }

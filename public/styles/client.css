@@ -1,9 +1,35 @@
-a {
-  color: white;
-  text-decoration: none;
+.container {
+  font-family: monospace;
+  height: 100%;
+}
+
+.header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.main-title {
+  font-size: 38px;
+  color: crimson;
+}
+
+.tag-line {
+  font-family: serif;
+  font-style: italic;
+  color: gray;
+}
+
+.connect {
+  text-align: center;
+}
+
+.get-started {
+  margin-bottom: 20px;
 }
 
 .btn {
+  color: white;
+  text-decoration: none;
   background: red;
   border: 0;
   padding: 10px 20px;
@@ -20,8 +46,29 @@ a {
   background: crimson;
 }
 
-h1 {
-  margin-bottom: 30px;
+.books {
+  display: flex;
+  justify-content: space-between;
+}
+
+.book {
+  font-size: 20px;
+  height: 200px;
+  box-shadow: 0 0 5px gray;
+  padding: 20px;
+  width: 33%;
+}
+
+.book>span {
+  display: block;
+}
+
+.title-container {
+  margin-bottom: 15px;
+}
+
+.label {
+  font-weight: 900;
 }
 
 .header {
