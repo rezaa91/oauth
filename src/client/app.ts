@@ -16,7 +16,7 @@ app.use(cookieParser());
 
 app.engine('html', cons.underscore);
 app.set('view engine', 'html');
-app.set('views', path.join(__dirname, '../../public/client'));
+app.set('views', path.join(__dirname, '../../views/client'));
 
 
 app.get('/', (req, res) => {

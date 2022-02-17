@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.engine('html', cons.underscore);
 app.set('view engine', 'html');
-app.set('views', path.join(__dirname, '../../public/authorization-server'));
+app.set('views', path.join(__dirname, '../../views/authorization-server'));
 
 app.get('/', (req, res) => {
   res.render('index', {clients: db.clients});
