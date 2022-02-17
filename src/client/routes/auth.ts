@@ -21,12 +21,12 @@ router.get('/', (req, res) => {
 
 router.get('/callback', async (req, res) => {
   if (req.query.error) {
-    res.status(500).json({error: req.query.error});
+    res.render('error', {error: req.query.error});
     return;
   }
 
   if (req.query.state !== state) {
-    res.status(500).json({error: 'state values do not match!'});
+    res.render('error', {error: 'state values do not match!'});
     return;
   }
 

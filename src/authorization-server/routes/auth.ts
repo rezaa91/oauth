@@ -25,7 +25,7 @@ router.get('/', (req, res) => {
   const requestedScopes = req.query.scope ? (req.query.scope as string).split(' ') : [];
   if (clientScopeDisallowed(client, requestedScopes)) {
     const params = new URLSearchParams({
-      error: 'invalid_scope'
+      error: 'invalid scope'
     })
     res.redirect(`${req.query.redirect_uri}?${params.toString()}`);
     return;
@@ -49,7 +49,7 @@ router.post('/approve', (req, res) => {
 
   if (!req.body.approve) {
     const params = new URLSearchParams({
-      error: 'access_denied'
+      error: 'access denied'
     });
     res.redirect(`${query.redirect_uri}?${params.toString()}`);
     return;
@@ -68,7 +68,7 @@ router.post('/approve', (req, res) => {
   }
 
   const params = new URLSearchParams({
-    error: 'unsupported_response_type'
+    error: 'unsupported response type'
   });
   res.redirect(`${query.redirect_uri}?${params.toString()}`);
   return;

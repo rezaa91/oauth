@@ -74,3 +74,9 @@
 .header {
   font-weight: 900;
 }
+
+.error-container {
+  border: 2px solid red;
+  text-align: center;
+  padding: 20px 10px;
+}

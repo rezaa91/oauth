@@ -11,7 +11,7 @@ router.get('/', isAuthorised, async(req, res) => {
     return;
   } catch (error) {
     console.log(error);
-    res.status(500).json({success: false, message: 'an error occured fetching books'});
+    res.render('error', {error: 'an error occured fetching books'});
     return;
   }
 });
