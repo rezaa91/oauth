@@ -1,0 +1,38 @@
+.container {
+  padding: 20px;
+  background: wheat;
+  box-shadow: 3px 1px 2px 1px gray;
+}
+
+h2 {
+  color: blueviolet;
+  margin-bottom: 30px;
+}
+
+form {
+  padding: 20px 0;
+}
+
+input[type="submit"] {
+  margin-top: 20px;
+  padding: 10px;
+  background: white;
+}
+
+input[name="approve"] {
+  background: lime;
+}
+
+h1 {
+  font-family: monospace;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: grey;
+}
+
+ul {
+  width: 100%;
+}
