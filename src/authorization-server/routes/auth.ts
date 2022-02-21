@@ -55,7 +55,8 @@ router.post('/approve', (req, res) => {
     return;
   }
 
-  if (query.response_type === 'code') {
+
+  if (query.response_type === 'code') { // for requesting an authorization code
     const authorizationCode = randomString.generate(8);
     const scopes = Object.keys(req.body).filter(key => key.startsWith('scope_')).map(scope => scope.slice(6)).join(',');
     updateClientScopes(query.client_id, scopes);
@@ -67,6 +68,9 @@ router.post('/approve', (req, res) => {
     });
     res.redirect(`${query.redirect_uri}?${params.toString()}`);
     return;
+
+  } else if (query.response_type === 'token') { // for requesting token directly (e.g implicit grant)
+    // TODO
   }
 
   const params = new URLSearchParams({
@@ -122,6 +126,15 @@ router.post('/token', (req, res) => {
       token_type: 'Bearer',
       scope: client.scope
     });
+  } else if (req.body.grant_type === 'client_credentials') {
+    // TODO
+  } else if (req.body.grant_type === 'refresh_token') {
+    // TODO
+  } else if (req.body.grant_type === 'password') {
+    // TODO
+  } else {
+    console.log(`unknown grant type ${req.body.grant_type}`);
+    res.status(400).json({success: false, error: 'unrecognised grant type'});
   }
 });
 
