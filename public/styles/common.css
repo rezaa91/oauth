@@ -15,3 +15,12 @@ a {
 ul {
   list-style: none;
 }
+
+input[type="text"] {
+  padding: 5px 10px;
+  box-shadow: 1px 1px 2px gray;
+}
+
+form {
+  margin-top: 10px;
+}
