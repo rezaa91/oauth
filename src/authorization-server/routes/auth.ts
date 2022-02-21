@@ -1,7 +1,7 @@
 import express from 'express';
 import randomString from 'randomstring';
 import {UntrustedRequest} from '../db';
-import {clientScopeDisallowed, getClientByAccessToken, getClientByAuthCode, getClientById, insertAccessToken} from '../repositories/client';
+import {clientScopeDisallowed, getClientByAccessToken, getClientByAuthCode, getClientById, insertAccessToken, updateClientScopes} from '../repositories/client';
 import { insertCode, removeCode } from '../repositories/code';
 import { deleteUntrustedRequest, getUntrustedRequestById, insertUntrustedRequest } from '../repositories/request';
 import { getProtectedResourceById } from '../repositories/resource';
@@ -22,14 +22,14 @@ router.get('/', (req, res) => {
     return;
   }
 
-  const requestedScopes = req.query.scope ? (req.query.scope as string).split(' ') : [];
-  if (clientScopeDisallowed(client, requestedScopes)) {
-    const params = new URLSearchParams({
-      error: 'invalid scope'
-    })
-    res.redirect(`${req.query.redirect_uri}?${params.toString()}`);
-    return;
-  }
+  const requestedScopes = req.query.scope ? (req.query.scope as string).split(',') : [];
+  // if (clientScopeDisallowed(client, requestedScopes)) {
+  //   const params = new URLSearchParams({
+  //     error: 'invalid scope'
+  //   })
+  //   res.redirect(`${req.query.redirect_uri}?${params.toString()}`);
+  //   return;
+  // }
 
   // insert request details to be retrieved and checked during the /approve request
   const reqId = insertUntrustedRequest(req.query as UntrustedRequest);
@@ -57,6 +57,8 @@ router.post('/approve', (req, res) => {
 
   if (query.response_type === 'code') {
     const authorizationCode = randomString.generate(8);
+    const scopes = Object.keys(req.body).filter(key => key.startsWith('scope_')).map(scope => scope.slice(6)).join(',');
+    updateClientScopes(query.client_id, scopes);
     insertCode(query.client_id, authorizationCode);
 
     const params = new URLSearchParams({
@@ -144,7 +146,7 @@ router.post('/introspect', (req, res) => {
     res.status(200).json({
       active: true,
       iss: 'http://localhost:5001',
-      scope: client.scope,
+      scope: client.scope.split(','),
       client: client.client_id
     })
     return;

@@ -12,7 +12,7 @@
         <h2 class="tag-line">Organise your books</h2>
       </div>
       <div class="books">
-        <% books.data.forEach(book => { %>
+        <% books.forEach(book => { %>
           <div class="book">
             <div class="title-container">
               <span class="label">Title:</span><span> <%- book.title %></span>
@@ -23,6 +23,12 @@
           </div>
         <% }) %>
       </div>
+
+      <form action="/books" method="post">
+        <input type="text" placeholder="author" name="author" />
+        <input type="text" placeholder="title" name="title" />
+        <input class="btn" type="submit" name="approve" value="Insert" />
+      </form>
     </div>
   </body>
 </html>

@@ -1,7 +1,11 @@
 import {Request, Response, NextFunction} from 'express';
-import {getTokenInfo} from '../services/auth';
+import {getTokenInfo, TokenInfo} from '../services/auth';
 
-export async function getAccessToken(req: Request, res: Response, next: NextFunction) {
+export type RequestWithAccessToken = Request & {
+  access_token?: TokenInfo;
+}
+
+export async function getAccessToken(req: RequestWithAccessToken, res: Response, next: NextFunction) {
   const auth = req.headers['authorization'];
   const token = auth?.slice(7); // 'bearer '
 
@@ -17,5 +21,6 @@ export async function getAccessToken(req: Request, res: Response, next: NextFunc
     res.status(401).json({success: false, message: 'invalid access token'});
     return;
   }
+  req.access_token = tokenInfo;
   next();
 }

@@ -2,8 +2,10 @@ import fetch from 'node-fetch';
 import qs from 'qs';
 import {Auth, Resource} from '../config';
 
-type TokenInfo = {
+export type TokenInfo = {
   active: boolean;
+  iss: string;
+  scope: string[];
 }
 
 export async function getTokenInfo(token: string): Promise<TokenInfo> {

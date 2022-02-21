@@ -34,3 +34,10 @@ export function insertRefreshToken(clientId: string, refreshToken: string): void
     client.refresh_token = refreshToken;
   }
 }
+
+export function updateClientScopes(clientId: string, scope: string): void {
+  const client = getClientById(clientId);
+  if (client) {
+    client.scope = scope;
+  }
+}

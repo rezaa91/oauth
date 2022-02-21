@@ -2,7 +2,7 @@ export enum Client {
   id = 'oauth-client-id-1',
   secret = 'oauth-client-id-1-secret',
   redirectURL = 'http://localhost:5000/auth/callback',
-  scope = 'read'
+  scope = 'read,write'
 }
 
 export enum Auth {
